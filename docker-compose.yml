@@ -1,0 +1,43 @@
+version: '3'
+services:
+
+  frontend:
+    container_name: react
+    build:
+      context: ./frontend
+      dockerfile: ./.docker/Dockerfile
+    ports:
+      - 3000:3000
+      - 24678:24678
+    volumes:
+      - ./frontend/src:/app/src
+      - ./frontend/package.json:/app/package.json
+      - ./frontend/package-lock.json:/app/package-lock.json
+
+  backend:
+    container_name: nestjs
+    build:
+      context: ./backend
+      dockerfile: ./.docker/Dockerfile
+    ports:
+      - 3005:3005
+    volumes:
+      - ./backend/src:/app/src
+      - ./backend/package.json:/app/package.json
+      - ./backend/package-lock.json:/app/package-lock.json
+    depends_on:
+      - mongodb
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:4-focal
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin # TODO Change to env variables
+      MONGO_INITDB_ROOT_PASSWORD: admin # TODO Change to env variables
+
+volumes:
+  mongodb:
