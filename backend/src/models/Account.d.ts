@@ -1,9 +1,10 @@
-export interface AccountDetails {
-  account_id: number
-  account_name: string
-  account_type: string
-  account_status: string
-  account_created_date: number
-  account_updated_date: number
-  account_balance: number
+export interface Account {
+  id: number
+  name: string
+  email: string
+  type: string
+  status: string
+  created_date: number
+  updated_date: number
+  balance: number
 }

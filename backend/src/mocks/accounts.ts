@@ -1,22 +1,24 @@
-import { AccountDetails } from 'src/models/Account'
+import { Account } from 'src/models/Account'
 
-export const accounts: AccountDetails[] = [
+export const accounts: Account[] = [
   {
-    account_id: 1,
-    account_name: 'Jose Mourinho',
-    account_type: 'saving',
-    account_status: 'green',
-    account_created_date: Date.now(),
-    account_updated_date: Date.now(),
-    account_balance: 1234912.23,
+    id: 1,
+    name: 'Jose Mourinho',
+    email: 'j.mourinho@gmail.com',
+    type: 'saving',
+    status: 'green',
+    created_date: Date.now(),
+    updated_date: Date.now(),
+    balance: 1234912.23,
   },
   {
-    account_id: 2,
-    account_name: 'Rocio Sanchez',
-    account_type: 'saving',
-    account_status: 'green',
-    account_created_date: Date.now(),
-    account_updated_date: Date.now(),
-    account_balance: 105912.12,
+    id: 2,
+    name: 'Rocio Sanchez',
+    email: 'r.sanchez@gmail.com',
+    type: 'saving',
+    status: 'green',
+    created_date: Date.now(),
+    updated_date: Date.now(),
+    balance: 105912.12,
   },
 ]

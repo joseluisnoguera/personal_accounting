@@ -8,6 +8,7 @@ COPY nest-cli.json \
   tsconfig.json \
   package.json \
   package-lock.json \
+  .env \
   ./
 
 RUN npm ci
